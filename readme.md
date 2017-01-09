@@ -6,12 +6,10 @@
 [Code in Matlab](MultiPassiveNeurite.m)
 
 Simulation of multi compartment model of passive neurite
-
-![alt tag](http://neuronaldynamics.epfl.ch/online/x82.png)
+<!-- ![alt tag](http://neuronaldynamics.epfl.ch/online/x82.png) -->
 
 ![alt tag](images/MultiPassiveNeurite.png)
 
-Simulation code for single and double compartment model is also available.
 
 ## Active Neurite Simulations
 [Code in Matlab](MultiActiveNeurite.m)
