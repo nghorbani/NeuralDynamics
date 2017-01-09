@@ -17,12 +17,12 @@ Simulation code for single and double compartment model is also available.
 [Code in Matlab](MultiActiveNeurite.m)
 
 Simulation of multi compartment Hodgkin-Huxley (HH) model of active neurite
-[Hodgkin Huxley Active Neuronal Membrane Model YouTube](https://www.youtube.com/watch?v=TYqxIPV0ua0)
 
 ![alt tag](images/MultiActiveNeurite.png)
 
 # Predicted time course of differnt parameters by HH model 
-[here single compartment]
+[Watch in YouTube!](https://www.youtube.com/watch?v=TYqxIPV0ua0)
+
 ![alt tag](images/HHModel.png)
 
 
