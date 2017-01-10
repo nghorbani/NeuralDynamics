@@ -1,6 +1,6 @@
 # Neural Dynamical Systems
 ##### A sample simulation in this course: 
-Simulation of action potential generation with Hugkin-huxley model of active neuronal membrane.
+Simulation of action potential generation with Hodgkin–Huxley model of active neuronal membrane.
 ![alt tag](images/HH_gatings.gif)
 
 ###### Quoting the Lecture Description:
