@@ -7,7 +7,7 @@ clear; close all;clc;
 set(0,'DefaultFigureWindowStyle','normal');
 
 % Stimulation Wave Shape: 0_______te--tdpp=======ts________tend
-dt = 0.001;       %ms
+dt = 0.004;       %ms
 te = 100;         %ms step input start
 tdpp = te + 0;     %ms Depolarizing Pre Pulse time
 ts = tdpp + 15;    %ms step input reset
@@ -166,7 +166,7 @@ nt(1,1:te/dt) = 0.3177*ones(1,te/dt);
 % % figure(200);plot(Idpps,ina_ratio);
 
 %%
-n_frames = 1200;
+n_frames = 30;
 F(1:n_frames) = struct('cdata',[],'colormap',[]);
 fig=figure('units','normalized','outerposition',[0 0 1 1]);
 ts_vector = linspace(100,149,n_frames);
@@ -176,11 +176,11 @@ sb3 = subplot(3,1,3);
 
 I0 = 10;%uA   
 
-myVideo = VideoWriter('HH_gatings','Uncompressed AVI');
-myVideo.FrameRate = 60;  % Default 30
-%myVideo.Quality = 100;    % Default 75
+%myVideo = VideoWriter('HH_gatings','Uncompressed AVI');
+%myVideo.FrameRate = 60;  % Default 30
+%open(myVideo);
 
-open(myVideo);
+myGif = 'HH_gatings.gif';
 
 for j = 1:n_frames
     ts = ts_vector(j);
@@ -221,15 +221,15 @@ for j = 1:n_frames
     axis(sb3,[90,160,0,1]);
     legend boxoff;
 
-    %drawnow
-    %F(j) = getframe(gcf);
     frame = getframe(gcf);
-    writeVideo(myVideo,frame);
+    im = frame2im(frame);
+    [imind,cm] = rgb2ind(im,256);
+    %writeVideo(myVideo,frame);
+    if j == 1
+        imwrite(imind,cm,myGif,'gif', 'Loopcount',inf);
+    else
+        imwrite(imind,cm,myGif,'gif','WriteMode','append');
+    end
 end
-%movie(fig,F,2);
-%v = VideoWriter('HH_gatings.mp4');
-%open(v);
-%writeVideo(F);
-close(myVideo)
 
-%movie2avi(F, 'HH_gatings.avi', 'quality', 100)
+%close(myVideo)
